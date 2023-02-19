@@ -30,3 +30,6 @@ test:
 
 coverage:
 	poetry run pytest --cov
+
+help:
+	poetry run gendiff -h
