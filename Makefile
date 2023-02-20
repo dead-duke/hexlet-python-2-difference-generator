@@ -28,8 +28,11 @@ lint:
 test:
 	poetry run pytest -s
 
-coverage:
+test-coverage:
 	poetry run pytest --cov
 
 help:
 	poetry run gendiff -h
+
+default-run:
+	poetry run gendiff ./tests/fixtures/file1.json ./tests/fixtures/file2.json
