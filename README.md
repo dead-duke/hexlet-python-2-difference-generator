@@ -5,3 +5,6 @@
 [![Python CI](https://github.com/deus-ex-m/python-project-50/actions/workflows/pyci.yml/badge.svg?branch=main)](https://github.com/deus-ex-m/python-project-50/actions/workflows/pyci.yml)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6a9d29688f4ed9d1a02b/maintainability)](https://codeclimate.com/github/deus-ex-m/python-project-50/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6a9d29688f4ed9d1a02b/test_coverage)](https://codeclimate.com/github/deus-ex-m/python-project-50/test_coverage)
+
+
+CLI applications to compare two files. The result of the work is a report of differences in files. Work with JSON, YML, YAML files, result formats 'stylish', 'plain', 'json'.
