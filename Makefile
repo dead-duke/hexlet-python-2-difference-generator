@@ -34,5 +34,8 @@ test-coverage:
 help:
 	poetry run gendiff -h
 
-default-run:
+json-run:
 	poetry run gendiff ./tests/fixtures/file1.json ./tests/fixtures/file2.json
+
+yml-run:
+	poetry run gendiff ./tests/fixtures/file1.yml ./tests/fixtures/file2.yml
