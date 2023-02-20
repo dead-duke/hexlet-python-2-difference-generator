@@ -3,3 +3,4 @@
 .coverage
 dist/
 .pytest_cache
+coverage.xml
