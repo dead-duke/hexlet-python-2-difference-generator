@@ -1,5 +1,5 @@
 from gendiff.generate_diff import generate_diff
-from tests.fixtures.results import flat_json_result
+from tests.fixtures.expected_results import flat_json_result
 
 
 def test_generate_diff():
