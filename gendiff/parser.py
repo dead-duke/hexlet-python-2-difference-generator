@@ -2,7 +2,7 @@ import json
 import yaml
 
 
-def parser(file):
+def get_data(file):
     with open(file) as f:
         file_extension = file.split('.')[-1]
         if file_extension == 'json':
