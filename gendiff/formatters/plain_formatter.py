@@ -22,6 +22,8 @@ def get_plain_format(data, parent_property=''):
 
 
 def get_value(value):
+    if value is None:
+        return 'null'
     if isinstance(value, dict):
         return '[complex value]'
     if isinstance(value, bool):

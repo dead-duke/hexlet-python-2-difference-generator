@@ -22,6 +22,8 @@ def get_stylish_format(data, ident=''):
 
 
 def get_value(value, ident):
+    if value is None:
+        return 'null'
     if isinstance(value, dict):
         return get_stylish_dict(value, ident + '    ')
     if isinstance(value, bool):
