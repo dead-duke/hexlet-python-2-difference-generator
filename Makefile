@@ -26,7 +26,7 @@ lint:
 	poetry run flake8 tests
 
 test:
-	poetry run pytest -s
+	poetry run pytest -svv
 
 test-coverage:
 	poetry run pytest --cov=gendiff --cov-report xml tests/
@@ -38,4 +38,10 @@ json-run:
 	poetry run gendiff ./tests/fixtures/file1.json ./tests/fixtures/file2.json
 
 yml-run:
-	poetry run gendiff ./tests/fixtures/file1.yml ./tests/fixtures/file2.yml
+	poetry run gendiff ./tests/fixtures/file1.yml ./tests/fixtures/file2.yaml
+
+nested-json-run:
+	poetry run gendiff ./tests/fixtures/file3.json ./tests/fixtures/file4.json
+
+nested-yml-run:
+	poetry run gendiff ./tests/fixtures/file3.yml ./tests/fixtures/file4.yaml
