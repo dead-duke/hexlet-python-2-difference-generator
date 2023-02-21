@@ -34,14 +34,14 @@ test-coverage:
 help:
 	poetry run gendiff -h
 
-json-run:
-	poetry run gendiff ./tests/fixtures/file1.json ./tests/fixtures/file2.json
+flat-stylish-run:
+	poetry run gendiff ./tests/fixtures/flat1.json ./tests/fixtures/flat2.json
 
-yml-run:
-	poetry run gendiff ./tests/fixtures/file1.yml ./tests/fixtures/file2.yaml
+nested-stylish-run:
+	poetry run gendiff ./tests/fixtures/nested1.json ./tests/fixtures/nested2.json
+
+nested-plain-run:
+	poetry run gendiff -f plain ./tests/fixtures/nested1.json ./tests/fixtures/nested2.json
 
 nested-json-run:
-	poetry run gendiff ./tests/fixtures/file3.json ./tests/fixtures/file4.json
-
-nested-yml-run:
-	poetry run gendiff ./tests/fixtures/file3.yml ./tests/fixtures/file4.yaml
+	poetry run gendiff -f json ./tests/fixtures/nested1.json ./tests/fixtures/nested2.json
