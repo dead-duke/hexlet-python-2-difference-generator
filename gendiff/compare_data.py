@@ -26,5 +26,5 @@ def compare_data(first_data, second_data):
             compared_data[key] = {
                 'previus_value': first_data[key],
                 'value': second_data[key],
-                'type': 'changed'}
+                'type': 'updated'}
     return compared_data
