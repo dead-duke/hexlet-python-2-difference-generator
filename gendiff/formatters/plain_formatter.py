@@ -28,4 +28,6 @@ def get_value(value):
         return '[complex value]'
     if isinstance(value, bool):
         return str(value).lower()
-    return f"'{value}'"
+    if isinstance(value, str):
+        return f"'{value}'"
+    return value
