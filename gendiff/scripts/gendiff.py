@@ -6,7 +6,7 @@ from gendiff.generate_diff import generate_diff
 def main():
     description = 'Compares two configuration files and shows a difference.'
     parser = argparse.ArgumentParser(description=description)
-    parser.add_argument('-f', '--format', default='json',
+    parser.add_argument('-f', '--format', default='stylish',
                         help='set format of output')
     parser.add_argument('first_file')
     parser.add_argument('second_file')
