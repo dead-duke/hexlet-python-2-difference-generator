@@ -2,11 +2,6 @@ types = {
     'added': '+',
     'removed': '-',
     'unchanged': ' ',
-    'changed': ''
+    'changed': '',
+    'nested': ' '
 }
-
-
-def get_value(value):
-    if type(value) is bool:
-        return str(value).lower()
-    return value

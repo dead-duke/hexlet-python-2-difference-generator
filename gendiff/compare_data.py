@@ -1,8 +1,16 @@
+def is_nested(data):
+    return isinstance(data, (dict, tuple, list, set))
+
+
 def compare_data(first_data, second_data):
     compared_data = {}
     all_keys = list(first_data) + list(second_data)
     for key in sorted(all_keys):
-        if key not in second_data:
+        if is_nested(first_data.get(key)) and is_nested(second_data.get(key)):
+            compared_data[key] = {
+                'children': compare_data(first_data[key], second_data[key]),
+                'type': 'nested'}
+        elif key not in second_data:
             compared_data[key] = {
                 'value': first_data[key],
                 'type': 'removed'}
