@@ -2,6 +2,6 @@ types = {
     'added': '+',
     'removed': '-',
     'unchanged': ' ',
-    'changed': '',
+    'updated': '',
     'nested': ' '
 }
