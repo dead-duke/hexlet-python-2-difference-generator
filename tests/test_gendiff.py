@@ -1,50 +1,26 @@
-from gendiff.generate_diff import generate_diff
-import json
+import pytest
+from gendiff import generate_diff
 
 
-def test_generate_diff_flat():
-    with open('./tests/fixtures/expected_results/stylish_flat.txt') as f:
-        flat_stylish_result = f.read()
-    first_file = './tests/fixtures/flat1.json'
-    second_file = './tests/fixtures/flat2.json'
-    flat_json_difference = generate_diff(first_file, second_file)
-    assert flat_json_difference == flat_stylish_result
-    first_file = './tests/fixtures/flat1.yml'
-    second_file = './tests/fixtures/flat2.yaml'
-    flat_yml_difference = generate_diff(first_file, second_file)
-    assert flat_yml_difference == flat_stylish_result
+def get_test_cases():
+    input_formats = ('json', 'yml')
+    output_formats = ('stylish', 'plain', 'json')
+    test_cases = []
+    for input_format in input_formats:
+        first_file = f'./tests/fixtures/test_file1.{input_format}'
+        second_file = f'./tests/fixtures/test_file2.{input_format}'
+        for output_format in output_formats:
+            output = f'./tests/fixtures/expected_results/{output_format}.txt'
+            with open(output) as f:
+                result = f.read()
+            test_case = (first_file, second_file, output_format, result)
+            test_cases.append(test_case)
+    return test_cases
 
 
-def test_generate_diff_nested():
-    with open('./tests/fixtures/expected_results/stylish_nested.txt') as f:
-        nested_result = f.read()
-    first_file = './tests/fixtures/nested1.json'
-    second_file = './tests/fixtures/nested2.json'
-    stylish_nested_difference = generate_diff(first_file, second_file)
-    assert stylish_nested_difference == nested_result
-    first_file = './tests/fixtures/nested1.yml'
-    second_file = './tests/fixtures/nested2.yaml'
-    stylish_nested_difference = generate_diff(first_file, second_file)
-    assert stylish_nested_difference == nested_result
-
-    with open('./tests/fixtures/expected_results/json_nested.json') as f:
-        nested_result = json.dumps(json.load(f), indent=4)
-    first_file = './tests/fixtures/nested1.json'
-    second_file = './tests/fixtures/nested2.json'
-    json_nested_difference = generate_diff(first_file, second_file, 'json')
-    assert json_nested_difference == nested_result
-    first_file = './tests/fixtures/nested1.yml'
-    second_file = './tests/fixtures/nested2.yaml'
-    json_nested_difference = generate_diff(first_file, second_file, 'json')
-    assert json_nested_difference == nested_result
-
-    with open('./tests/fixtures/expected_results/plain_nested.txt') as f:
-        nested_result = f.read()
-    first_file = './tests/fixtures/nested1.json'
-    second_file = './tests/fixtures/nested2.json'
-    flat_json_difference = generate_diff(first_file, second_file, 'plain')
-    assert flat_json_difference == nested_result
-    first_file = './tests/fixtures/nested1.yml'
-    second_file = './tests/fixtures/nested2.yaml'
-    flat_yml_difference = generate_diff(first_file, second_file, 'plain')
-    assert flat_yml_difference == nested_result
+@pytest.mark.parametrize(
+    "first_file, second_file, format_name, output",
+    get_test_cases()
+)
+def test_generate_diff(first_file, second_file, format_name, output):
+    assert generate_diff(first_file, second_file, format_name) == output
