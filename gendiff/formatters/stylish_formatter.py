@@ -1,6 +1,3 @@
-from gendiff.formatters.types import types
-
-
 def get_stylish_format(data, ident=''):
     output = '{\n'
     for item in data:
@@ -42,3 +39,12 @@ def get_stylish_dict(item, ident=''):
         else:
             stylish_output += f'{new_ident}{key}: {item_value}\n'
     return stylish_output + ident + '}'
+
+
+types = {
+    'added': '+',
+    'removed': '-',
+    'unchanged': ' ',
+    'updated': '',
+    'nested': ' '
+}
