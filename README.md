@@ -1,10 +1,9 @@
 
 # Hexlet: "Difference Generator"
 
-[![Actions Status](https://github.com/grim-vagabond/hexlet-python-2-difference-generator/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/grim-vagabond/hexlet-python-2-difference-generator/actions/workflows/hexlet-check.yml)
-[![Python CI](https://github.com/grim-vagabond/hexlet-python-2-difference-generator/actions/workflows/pyci.yml/badge.svg?branch=main)](https://github.com/grim-vagabond/hexlet-python-2-difference-generator/actions/workflows/pyci.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/505ed5156e6e50458af9/maintainability)](https://codeclimate.com/github/grim-vagabond/hexlet-python-2-difference-generator/maintainability)
-[![Test Coverage](https://api.codeclimate.com/v1/badges/505ed5156e6e50458af9/test_coverage)](https://codeclimate.com/github/grim-vagabond/hexlet-python-2-difference-generator/test_coverage)
+[![Actions Status](https://github.com/dead-duke/hexlet-python-2-difference-generator/actions/workflows/hexlet-check.yml/badge.svg?branch=main)](https://github.com/dead-duke/hexlet-python-2-difference-generator/actions/workflows/hexlet-check.yml)
+[![Python CI](https://github.com/dead-duke/hexlet-python-2-difference-generator/actions/workflows/pyci.yml/badge.svg?branch=main)](https://github.com/dead-duke/hexlet-python-2-difference-generator/actions/workflows/pyci.yml)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=dead-duke_hexlet-python-2-difference-generator&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=dead-duke_hexlet-python-2-difference-generator)
 
 CLI applications to compare two files. The result of the work is a report of differences in files. Work with JSON, YML, YAML files, result formats 'stylish', 'plain', 'json'.
 
